@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
                 echo "Welcome to Jenkins Environment"
                 sh 'echo second step'
@@ -11,7 +11,8 @@ pipeline {
                 echo 'Multiline'
                 echo 'Example'
                 '''
-                echo "not using shell"
+                sh 'echo using shell inside of Jenkinsfile'
+                echo "not using shell outside of Jenkinsfile"
             }
         }
     }
